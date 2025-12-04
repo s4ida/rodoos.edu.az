@@ -21,8 +21,16 @@ const services = [
   {
     id: 3,
     icon: <Languages className="w-12 h-12 text-black-600" />,
-    title: "Xarici Dil Kursları",
-    description: "İngilis, Rus dillərində peşəkar təlim proqramları",
+    title: "İngilis dili",
+    description: "Cambridge metodlarına əsaslanan ingilis dili təhsili",
+    price: "45 AZN/ay",
+    duration: "6 ay",
+  },
+   {
+    id: 3,
+    icon: <Languages className="w-12 h-12 text-black-600" />,
+    title: "Rus dili",
+    description: "Rus dilində peşəkar danışıq və qrammatika təlim proqramları",
     price: "45 AZN/ay",
     duration: "6 ay",
   },

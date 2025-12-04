@@ -2,29 +2,37 @@ import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "./ui/button";
 import { motion, AnimatePresence } from "motion/react";
+import Telimzali from "/src/img/təlim-zalı.jpg";
+import Otaq4 from "/src/img/otaq4.jpg";
+import Otaq2 from "/src/img/otaq2.jpg";
+import Otaq1 from "/src/img/otaq1.jpg";
 
 const heroSlides = [
 {
   id: 1,
-  image: "https://ibb.co/xSJty44dhttps://i.postimg.cc/q7qRYQBQ/IMG-20250826-WA0094.jpg",
+  image: Telimzali,
   title: "Peşəkar Təhsil Mərkəzi",
   subtitle: "Gələcəyinizi bizimlə birlikdə qurun. Keyfiyyətli təhsil və müasir kurslar.",
 }
-
-
 ,
  {
   id: 2,
-  image: "https://drive.google.com/uc?export=view&id=1XJJW-2L0faswcPh5_xz1Rdq9ahRZKWZ8",
+  image: Otaq4,
   title: "Müasir Təhsil Texnologiyaları",
   subtitle: "İnteraktiv dərslər və təcrübəli müəllimlər ilə səmərəli öyrənin.",
 }
 ,
   {
     id: 3,
-    image: "https://images.unsplash.com/photo-1762330916233-221b49fce7f5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxvbmxpbmUlMjBsZWFybmluZyUyMGNvdXJzZXxlbnwxfHx8fDE3NjM2OTI5NDZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+  image: Otaq2,
     title: "Online və Oflayn Kurslar",
     subtitle: "İstədiyiniz formatda öyrənin, istədiyiniz vaxt irəliləyin.",
+  },
+   {
+    id: 3,
+  image: Otaq1,
+    title: "Təcrübəli müəllim kollektivi",
+    subtitle: "Öz sahəsində ixtisaslaşmış müəllimlərdən dərs alın.",
   },
 ];
 
@@ -72,14 +80,7 @@ export default function Hero() {
             >
               <h1 className="text-4xl md:text-6xl mb-6">{heroSlides[currentSlide].title}</h1>
               <p className="text-xl md:text-2xl mb-8 text-white/90">{heroSlides[currentSlide].subtitle}</p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" className="bg-white text-blue-600 hover:bg-blue-50">
-                  Qeydiyyat
-                </Button>
-                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
-                  Ətraflı Bax
-                </Button>
-              </div>
+          
             </motion.div>
           </div>
         </motion.div>

@@ -12,7 +12,7 @@ export default function About() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="flex justify-center">
               <div className="bg-gradient-to-br from-white-600 to-white-800 rounded-3xl p-12 shadow-2xl">
-                                   <img className="aboutlogo" src="/src/img/2.jpg" alt="logo"></img>
+                                   <img className="aboutlogo" src="/src/img/logo-dikey.jpg" alt="logo"></img>
               </div>
             </div>
             <div>

@@ -48,11 +48,11 @@
     --color-blue-50: oklch(.97 .014 254.604);
     --color-blue-100: oklch(.932 .032 255.585);
     --color-blue-200: oklch(.882 .059 254.128);
-    --color-blue-400: oklch(.707 .165 254.624);
-    --color-blue-600: oklch(.546 .245 262.881);
-    --color-blue-700: oklch(.488 .243 264.376);
-    --color-blue-800: oklch(.424 .199 265.638);
-    --color-blue-900: oklch(.379 .146 265.522);
+    --color-blue-400: #6D3FC3;
+    --color-blue-600: #6338b3;
+    --color-blue-700: #532f95;
+    --color-blue-800:#331e5a;
+    --color-blue-900:#6D3FC3;
     --color-gray-50: oklch(.985 .002 247.839);
     --color-gray-100: oklch(.967 .003 264.542);
     --color-gray-300: oklch(.872 .01 258.338);
@@ -162,8 +162,7 @@
   left: 100%;
 }
 
-.aboutlogo{
-}
+
   hr {
     height: 0;
     color: inherit;
@@ -240,7 +239,6 @@
   }
 
   img, svg, video, canvas, audio, iframe, embed, object {
-    vertical-align: middle;
     display: block;
   }
 
@@ -621,14 +619,12 @@
   }
 
   .line-clamp-2 {
-    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     display: -webkit-box;
     overflow: hidden;
   }
 
   .line-clamp-3 {
-    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     display: -webkit-box;
     overflow: hidden;

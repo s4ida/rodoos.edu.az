@@ -1,6 +1,5 @@
 import { useState } from "react";
-import { Menu, X, GraduationCap } from "lucide-react";
-import { Button } from "./ui/button";
+import { Menu, X,} from "lucide-react";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -21,7 +20,7 @@ export default function Header() {
         <div className="flex items-center justify-between h-20 nav-div">
           {/* Logo */}
          
-                   <img className="logo" src="/src/img/Məktəblilər üçün proqramlaşdırma.png" alt="logo"></img>
+                   <img className="logo" src="/src/img/logo-yatay.png" alt="logo"></img>
 
          
 
