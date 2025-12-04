@@ -4,6 +4,7 @@ import SaidaImage from "/src/img/Saida.jpg";
 import HuseynImage from "/src/img/Hüseynağa.jpg";
 import AynurImage from "/src/img/Aynur.jpg";
 import FatimaImage from "/src/img/Fatimə.jpg";
+import YusifImage from "/src/img/Yusif.jpg";
 
 const teachers = [
   {
@@ -45,7 +46,7 @@ const teachers = [
     name: "Zayıdzadə Yusif",
     profession: "Azərbaycan dili müəllimi",
     bio: "Şagirdlərin nitq mədəniyyətini və ünsiyyət bacarıqlarını artıran, qrammatika və danışıq dərsləri ilə seçilən Azərbaycan dili müəllimi.",
-    image: "https://images.unsplash.com/photo-1551989745-347c28b620e5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxidXNpbmVzcyUyMHdvbWFuJTIwdGVhY2hlcnxlbnwxfHx8fDE3NjM3NTkyNTZ8MA&ixlib=rb-4.1.0&q=80&w=400",
+    image: YusifImage,
 
   },
      {
