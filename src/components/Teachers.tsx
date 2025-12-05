@@ -5,6 +5,7 @@ import HuseynImage from "/src/img/Hüseynağa.jpg";
 import AynurImage from "/src/img/Aynur.jpg";
 import FatimaImage from "/src/img/Fatimə.jpg";
 import YusifImage from "/src/img/Yusif.jpg";
+import RasimImage from "/src/img/Rasim.jpg";
 
 const teachers = [
   {
@@ -30,7 +31,7 @@ const teachers = [
     name: "Qafarov Rasim",
     profession: "Riyaziyyat müəllimi",
     bio: "Riyazi düşünmə və məntiqi analiz bacarıqlarını inkişaf etdirməyə yönəlmiş, tələbələrə hesablamaları daha asan qavramağa kömək edən müəllim.",
-    image: "https://images.unsplash.com/photo-1551989745-347c28b620e5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxidXNpbmVzcyUyMHdvbWFuJTIwdGVhY2hlcnxlbnwxfHx8fDE3NjM3NTkyNTZ8MA&ixlib=rb-4.1.0&q=80&w=400",
+    image: RasimImage,
    
   },
     {
