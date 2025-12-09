@@ -6,14 +6,16 @@ import Services from "./components/Services";
 import Teachers from "./components/Teachers";
 import Blog from "./components/Blog";
 import Exams from "./components/Exams";
-import News from "./components/News";
+import NewsSection from "./components/News";
 import Footer from "./components/Footer";
 import BlogDetail from "./components/BlogDetail";
+import NewsDetail from "./components/NewsDetail";
+import AdminRoute from "./components/AdminRoute";
 
 function App() {
   return (
     <Routes>
-      {/* Əsas səhifə */}
+      {/* Ana səhifə */}
       <Route
         path="/"
         element={
@@ -25,7 +27,7 @@ function App() {
             <Teachers />
             <Blog />
             <Exams />
-            <News />
+            <NewsSection />
             <Footer />
           </div>
         }
@@ -33,6 +35,12 @@ function App() {
 
       {/* Blog detalları */}
       <Route path="/blog/:id" element={<BlogDetail />} />
+      
+      {/* Xəbər detalları */}
+      <Route path="/news/:id" element={<NewsDetail />} />
+      
+      {/* Admin paneli */}
+      <Route path="/admin" element={<AdminRoute />} />
     </Routes>
   );
 }

@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="container mx-auto px-4 md:px-8 py-16">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           <div>
-            <h3 className="text-2xl mb-6 text-white">Təhsil Mərkəzi</h3>
+            <h3 className="text-2xl mb-6 text-white">Rodoos İnnovativ Təhsil Mərkəzi</h3>
             <p className="text-gray-400 mb-6">
               Peşəkar təhsil xidmətləri və müasir kurslarla gələcəyinizi bizimlə birlikdə qurun.
             </p>
@@ -105,18 +105,18 @@ export default function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start gap-3 text-gray-400">
                 <MapPin className="w-5 h-5 text-blue-400 mt-1 flex-shrink-0" />
-                <span>Bakı şəhəri, Nəsimi rayonu, 28 May küçəsi 12</span>
+                <span>Masallı şəh. Heydər Əliyev pr. ASAN Xidmət Mərkəzinin yanı</span>
               </li>
               <li className="flex items-center gap-3 text-gray-400">
                 <Phone className="w-5 h-5 text-blue-400 flex-shrink-0" />
                 <a href="tel:+994501234567" className="hover:text-blue-400 transition-colors">
-                  +994 (50) 123-45-67
+                  +994 (70) 273 25 00
                 </a>
               </li>
               <li className="flex items-center gap-3 text-gray-400">
                 <Mail className="w-5 h-5 text-blue-400 flex-shrink-0" />
                 <a href="mailto:info@tehsilmerkezi.az" className="hover:text-blue-400 transition-colors">
-                  info@tehsilmerkezi.az
+                  rodoos.itm.office@gmail.com
                 </a>
               </li>
             </ul>
@@ -125,7 +125,7 @@ export default function Footer() {
 
         <div className="border-t border-gray-800 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-gray-400 text-sm">
-            <p>© 2024 Təhsil Mərkəzi. Bütün hüquqlar qorunur.</p>
+            <p>© 2025 Təhsil Mərkəzi. Bütün hüquqlar qorunur.</p>
             <div className="flex gap-6">
               <a href="#" className="hover:text-blue-400 transition-colors">
                 Gizlilik Siyasəti
