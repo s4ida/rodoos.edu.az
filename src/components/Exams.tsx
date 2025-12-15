@@ -1,13 +1,22 @@
 import { useEffect, useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card";
 import { Button } from "./ui/button";
-import { Calendar, Clock, FileText, Loader2 } from "lucide-react";
+import { Calendar, Clock, FileText, Loader2, MessageCircle } from "lucide-react";
 import { supabase, type Exam } from '../lib/supabase';
 
 export default function Exams() {
   const [exams, setExams] = useState<Exam[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
+
+  // WhatsApp-a yönləndirmə funksiyası
+  const handleWhatsAppRedirect = (examTitle: string) => {
+    const phoneNumber = "994774162500"; // +994 77 416 25 00
+    const message = `Salam! "${examTitle}" imtahanı üçün qeydiyyatdan keçmək istəyirəm. Ətraflı məlumat verə bilərsinizmi?`;
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    
+    window.open(whatsappUrl, '_blank');
+  };
 
   // Supabase-dən imtahanları yüklə
   const fetchExams = async () => {
@@ -16,7 +25,7 @@ export default function Exams() {
       const { data, error } = await supabase
         .from('exams')
         .select('*')
-        .order('date', { ascending: true }); // Tarixə görə sırala
+        .order('date', { ascending: true });
 
       if (error) {
         throw error;
@@ -44,7 +53,6 @@ export default function Exams() {
     });
   };
 
-  // Yüklənmə vəziyyəti
   if (loading) {
     return (
       <section id="exams" className="py-20 bg-gradient-to-b from-gray-50 to-white">
@@ -60,19 +68,13 @@ export default function Exams() {
     );
   }
 
-  // Xəta vəziyyəti
   if (error) {
     return (
       <section id="exams" className="py-20 bg-gradient-to-b from-gray-50 to-white">
         <div className="container mx-auto px-4 md:px-8">
           <div className="text-center">
-            <div className="text-red-600 text-xl">
-              {error}
-            </div>
-            <Button 
-              onClick={fetchExams} 
-              className="mt-4 bg-blue-600 hover:bg-blue-700"
-            >
+            <div className="text-red-600 text-xl">{error}</div>
+            <Button onClick={fetchExams} className="mt-4 bg-blue-600 hover:bg-blue-700">
               Yenidən cəhd et
             </Button>
           </div>
@@ -98,9 +100,7 @@ export default function Exams() {
           <div className="text-center py-12">
             <FileText className="w-16 h-16 text-gray-300 mx-auto mb-4" />
             <h3 className="text-xl text-gray-500 mb-2">Hələ imtahan əlavə edilməyib</h3>
-            <p className="text-gray-400">
-              İmtahan tarixləri yaxınlarda paylaşılacaq!
-            </p>
+            <p className="text-gray-400">İmtahan tarixləri yaxınlarda paylaşılacaq!</p>
           </div>
         ) : (
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
@@ -113,13 +113,9 @@ export default function Exams() {
                 <CardHeader>
                   <div className="flex items-center gap-2 text-blue-600 text-sm mb-3">
                     <FileText className="w-4 h-4" />
-                    <span className="px-2 py-1 bg-blue-50 rounded-full">
-                      Yeni
-                    </span>
+                    <span className="px-2 py-1 bg-blue-50 rounded-full">Yeni</span>
                   </div>
-                  <CardTitle className="text-xl text-blue-900">
-                    {exam.title}
-                  </CardTitle>
+                  <CardTitle className="text-xl text-blue-900">{exam.title}</CardTitle>
                   <CardDescription className="text-gray-600 mt-2">
                     {exam.description}
                   </CardDescription>
@@ -135,7 +131,11 @@ export default function Exams() {
                       <span>Müddət: Təyin ediləcək</span>
                     </div>
                   </div>
-                  <Button className="w-full bg-blue-600 hover:bg-blue-700">
+                  <Button 
+                    onClick={() => handleWhatsAppRedirect(exam.title)}
+                    className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded-lg transition-all duration-200 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl"
+                  >
+                    <MessageCircle className="w-4 h-4" />
                     Qeydiyyatdan Keç
                   </Button>
                 </CardContent>

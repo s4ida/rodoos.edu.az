@@ -1,6 +1,12 @@
 import { useParams } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
+import IngilisDiliDers1 from "/src/img/IngilisDiliDers1.jpg";
+import IngilisDiliDers2 from "/src/img/IngilisDiliDers2.jpg";
+import Azdiliders1 from "/src/img/Azdiliders1.jpg";
+import Azdiliders2 from "/src/img/Azdiliders2.jpg";
+import riyaziyyatders1 from "/src/img/riyaziyyatders1.jpg";
+import riyaziyyatders2 from "/src/img/riyaziyyatders2.jpg";
 
 const blogData = [
   {
@@ -79,8 +85,8 @@ Beləliklə, proqramlaşdırma yalnız dərs deyil, gündəlik həyatın bir his
     title: "İngilis dilini öyrənməyin 5 effektiv yolu",
     category: "İngilis dili",
     images: [
-      "https://images.unsplash.com/photo-1546074176-abecd33d2b53?auto=format&w=1200",
-      "https://images.unsplash.com/photo-1546074176-abecd33d2b53?auto=format&w=1200",
+      IngilisDiliDers1,
+      IngilisDiliDers2,
     ],
     content: `
 İngilis dili, dünyada ən çox danışılan dillərdən biridir və həm təhsil, həm iş, həm də səyahət imkanları üçün çox vacibdir. Lakin bir çox insan ingilis dilini öyrənməkdə çətinlik çəkir və bunu vaxt aparan bir proses kimi görür. Doğru metodlar və effektiv strategiyalar tətbiq etməklə bu proses çox daha sürətli və asan ola bilər. Aşağıda ingilis dilini tez öyrənməyin 5 effektiv yolunu araşdıracağıq.
@@ -174,8 +180,8 @@ Uğurları qeyd edin: Hər öyrəndiyiniz 10 yeni söz və ya bir danışıq mə
     title: "Azərbaycan dilində bacarıqlı yazı və danışıq necə inkişaf etdirilir?",
     category: "Azərbaycan dili",
     images: [
-      "https://images.unsplash.com/photo-1546074176-abecd33d2b53?auto=format&w=1200",
-      "https://images.unsplash.com/photo-1546074176-abecd33d2b53?auto=format&w=1200",
+         Azdiliders1,
+      Azdiliders2,
     ],
     content: `
 Bacarıqlı yazı və danışıq qabiliyyəti həyatın hər sahəsində uğur qazanmaq üçün vacibdir. Təhsil, iş mühiti, sosial həyat və şəxsi inkişaf üçün düzgün və təsirli ünsiyyət qurmaq lazımdır. Azərbaycan dilində yazı və danışıq bacarıqlarını inkişaf etdirmək üçün müəyyən metodlar və davamlı məşqlər tətbiq edilməlidir. Bu məqalədə sizə bacarıqlı yazı və danışıq üçün praktik və effektiv yolları təqdim edirik.
@@ -228,8 +234,8 @@ Təcrübə və təhlil: Yazı və danışıq bacarıqlarınızı müxtəlif kont
     title: "Riyaziyyatı başa düşmək və həll etmək yolları",
     category: "Riyaziyyat",
     images: [
-      "https://images.unsplash.com/photo-1546074176-abecd33d2b53?auto=format&w=1200",
-      "https://images.unsplash.com/photo-1546074176-abecd33d2b53?auto=format&w=1200",
+      riyaziyyatders1,
+      riyaziyyatders2,
     ],
     content: `
 Riyaziyyat, yalnız məktəblərdə deyil, həyatın hər sahəsində vacib bir fəndir. Lakin bir çox insan üçün riyaziyyat çətin və mürəkkəb görünür. Əslində, doğru yanaşmalar və metodlar tətbiq edilərsə, riyaziyyatı başa düşmək və problemləri həll etmək daha asan olur. Bu məqalədə riyaziyyatı anlamaq və uğurla həll etmək üçün əsas yolları araşdıracağıq.

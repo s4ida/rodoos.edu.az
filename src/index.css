@@ -633,7 +633,11 @@
   .flex {
     display: flex;
   }
+.exam-btn{
 
+  background-color:#6C3CC3;
+  border-radius: 5px;
+}
   .grid {
     display: grid;
   }

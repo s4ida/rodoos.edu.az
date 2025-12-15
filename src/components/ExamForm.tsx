@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { supabase, type Exam } from '../lib/supabase'
+import { supabase } from '../lib/supabase'
 import { Button } from './ui/button'
 import { Input } from './ui/input'
 import { Label } from './ui/label'
@@ -9,14 +9,17 @@ import { Alert, AlertDescription } from './ui/alert'
 
 interface ExamFormProps {
   onExamAdded?: () => void
+  editingExam?: any
+  onEditComplete?: () => void
 }
 
-const ExamForm: React.FC<ExamFormProps> = ({ onExamAdded }) => {
+const ExamForm: React.FC<ExamFormProps> = ({ onExamAdded, editingExam, onEditComplete }) => {
   const [formData, setFormData] = useState({
-    title: '',
-    description: '',
-    date: ''
+    title: editingExam?.title || '',
+    description: editingExam?.description || '',
+    date: editingExam?.date || new Date().toISOString().split('T')[0]
   })
+  
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
   const [success, setSuccess] = useState('')
@@ -31,9 +34,12 @@ const ExamForm: React.FC<ExamFormProps> = ({ onExamAdded }) => {
     }))
   }
 
-  // resetForm funksiyasını burada əlavə edirik
   const resetForm = () => {
-    setFormData({ title: '', description: '', date: '' })
+    setFormData({
+      title: '',
+      description: '',
+      date: new Date().toISOString().split('T')[0]
+    })
     setError('')
     setSuccess('')
   }
@@ -45,35 +51,43 @@ const ExamForm: React.FC<ExamFormProps> = ({ onExamAdded }) => {
     setSuccess('')
 
     try {
-      // Form validasiyası
       if (!formData.title.trim() || !formData.description.trim() || !formData.date) {
         throw new Error('Bütün sahələri doldurun')
       }
 
-      // Supabase-ə məlumatları göndər
-      const { error } = await supabase
-        .from('exams')
-        .insert([{
-          title: formData.title.trim(),
-          description: formData.description.trim(),
-          date: formData.date
-        }])
-
-      if (error) {
-        throw error
+      const examData = {
+        title: formData.title,
+        description: formData.description,
+        date: formData.date
       }
 
-      // Uğurlu əlavə
-      setSuccess('İmtahan uğurla əlavə edildi!')
-      setFormData({ title: '', description: '', date: '' })
+      if (editingExam) {
+        // Düzəliş rejimi
+        const { error } = await supabase
+          .from('exams')
+          .update(examData)
+          .eq('id', editingExam.id)
+
+        if (error) throw error
+        setSuccess('İmtahan uğurla yeniləndi!')
+        if (onEditComplete) onEditComplete()
+      } else {
+        // Yeni imtahan əlavə etmə
+        const { error } = await supabase
+          .from('exams')
+          .insert([examData])
+
+        if (error) throw error
+        setSuccess('İmtahan uğurla əlavə edildi!')
+        resetForm()
+      }
       
-      // Parent komponente bildir
       if (onExamAdded) {
         onExamAdded()
       }
 
     } catch (err: any) {
-      setError(err.message || 'İmtahan əlavə edilərkən xəta baş verdi')
+      setError(err.message || 'Xəta baş verdi')
     } finally {
       setLoading(false)
     }
@@ -82,9 +96,11 @@ const ExamForm: React.FC<ExamFormProps> = ({ onExamAdded }) => {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Yeni İmtahan Əlavə Et</CardTitle>
+        <CardTitle>
+          {editingExam ? 'İmtahanı Düzəliş Et' : 'Yeni İmtahan Əlavə Et'}
+        </CardTitle>
         <CardDescription>
-          İmtahan məlumatlarını doldurun və əlavə edin
+          {editingExam ? 'İmtahan məlumatlarını düzəliş edin' : 'İmtahan məlumatlarını doldurun'}
         </CardDescription>
       </CardHeader>
       <CardContent>
@@ -110,10 +126,9 @@ const ExamForm: React.FC<ExamFormProps> = ({ onExamAdded }) => {
             <Input
               id="title"
               name="title"
-              type="text"
               value={formData.title}
               onChange={handleInputChange}
-              placeholder="Məsələn: Riyaziyyat İmtahanı"
+              placeholder="İmtahan adını daxil edin"
               required
             />
           </div>
@@ -149,16 +164,19 @@ const ExamForm: React.FC<ExamFormProps> = ({ onExamAdded }) => {
               disabled={loading}
               className="flex-1"
             >
-              {loading ? 'Əlavə edilir...' : 'İmtahan əlavə et'}
+              {loading ? 
+                (editingExam ? 'Yenilənir...' : 'Əlavə edilir...') : 
+                (editingExam ? 'Yenilə' : 'İmtahan əlavə et')
+              }
             </Button>
             
             <Button 
               type="button" 
-              variant="outline" 
-              onClick={resetForm}
-              disabled={loading}
+              onClick={editingExam ? onEditComplete : resetForm}
+              variant="outline"
+              className="flex-1"
             >
-              Təmizlə
+              {editingExam ? 'Ləğv et' : 'Formu təmizlə'}
             </Button>
           </div>
         </form>

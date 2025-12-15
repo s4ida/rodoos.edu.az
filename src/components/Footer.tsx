@@ -42,22 +42,22 @@ export default function Footer() {
             <h4 className="text-xl mb-6 text-white">Sürətli Keçidlər</h4>
             <ul className="space-y-3">
               <li>
-                <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">
+                <a href="hero" className="text-gray-400 hover:text-blue-400 transition-colors">
                   Ana Səhifə
                 </a>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">
+                <a href="#about" className="text-gray-400 hover:text-blue-400 transition-colors">
                   Haqqımızda
                 </a>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">
+                <a href="services" className="text-gray-400 hover:text-blue-400 transition-colors">
                   Kurslar
                 </a>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">
+                <a href="teachers" className="text-gray-400 hover:text-blue-400 transition-colors">
                   Müəllimlər
                 </a>
               </li>

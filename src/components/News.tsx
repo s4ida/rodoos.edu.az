@@ -159,7 +159,7 @@ export default function NewsSection() {
                     <div className="flex items-center gap-2">
                       <User className="w-4 h-4" />
                       <span>{item.author}</span>
-                                        </div>
+                    </div>
                   </div>
                   
                   <Link to={`/news/${item.id}`}>
