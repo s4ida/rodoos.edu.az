@@ -1,11 +1,56 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useAuth } from '../contexts/AuthContext'
 import AdminLogin from './AdminLogin'
 import AdminPanel from './AdminPanel'
 import { Shield, Loader2 } from 'lucide-react'
 
 const AdminRoute: React.FC = () => {
-  const { isAdmin, loading } = useAuth()
+  const { isAdmin, loading, logout, user, session } = useAuth()
+
+  // Admin panel-dən çıxanda və ya page dəyişəndə avtomatik logout
+  useEffect(() => {
+    // Səhifə yenilənəndə və ya qapatılanda logout
+    const handleBeforeUnload = (event: BeforeUnloadEvent) => {
+      if (user && session) {
+        // Dərhal logout et
+        logout()
+        // Local storage-ı təmizlə
+        localStorage.clear()
+        sessionStorage.clear()
+      }
+    }
+
+    // Browser tab qapatılanda və ya navigation edəndə
+    const handleVisibilityChange = () => {
+      if (document.hidden && user && session) {
+        // Səhifə gizlədildikdə dərhal logout
+        logout()
+        localStorage.clear()
+        sessionStorage.clear()
+      }
+    }
+
+    // Səhifədən çıxanda (navigation)
+    const handlePopState = () => {
+      if (user && session && window.location.pathname !== '/admin') {
+        logout()
+        localStorage.clear()
+        sessionStorage.clear()
+      }
+    }
+
+    // Event listener-lər əlavə et
+    window.addEventListener('beforeunload', handleBeforeUnload)
+    document.addEventListener('visibilitychange', handleVisibilityChange)
+    window.addEventListener('popstate', handlePopState)
+
+    // Cleanup
+    return () => {
+      window.removeEventListener('beforeunload', handleBeforeUnload)
+      document.removeEventListener('visibilitychange', handleVisibilityChange)
+      window.removeEventListener('popstate', handlePopState)
+    }
+  }, [user, session, logout])
 
   // Loading vəziyyəti
   if (loading) {
