@@ -1,9 +1,9 @@
 import { Card, CardContent } from "./ui/card";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
-import SaidaImage from "/src/img/Saida.jpg";
-import HuseynImage from "/src/img/Hüseynağa.jpg";
-import AynurImage from "/src/img/Aynur.jpg";
-import FatimaImage from "/src/img/Fatimə.jpg";
+import SaidaImage from "/src/img/Saida.jpeg";
+import HuseynImage from "/src/img/Hüseynağa.jpeg";
+import AynurImage from "/src/img/Aynur.jpeg";
+import FatimaImage from "/src/img/Fatima.jpeg";
 import YusifImage from "/src/img/Yusif.jpg";
 import RasimImage from "/src/img/Rasim.jpg";
 
@@ -24,7 +24,14 @@ const teachers = [
     image: HuseynImage,
     
   },
-
+{
+    id: 4,
+    name: "Ələkbərova Fatimə",
+    profession: "Rus dili müəllimi",
+    bio: "Rus dili danışıq bacarıqlarını inkişaf etdirməyə fokuslanan, tələbələrin gündəlik və praktiki situasiyalarda sərbəst danışmasına kömək edən müəllim.",
+    image: FatimaImage,
+   
+  },
 
     {
     id: 3,
@@ -34,12 +41,12 @@ const teachers = [
     image: RasimImage,
    
   },
-    {
-    id: 4,
-    name: "Ələkbərova Fatimə",
-    profession: "Rus dili müəllimi",
-    bio: "Rus dili danışıq bacarıqlarını inkişaf etdirməyə fokuslanan, tələbələrin gündəlik və praktiki situasiyalarda sərbəst danışmasına kömək edən müəllim.",
-    image: FatimaImage,
+      {
+    id: 6,
+    name: "Novruzova Aynur",
+    profession: "İngilis dili müəllimi",
+    bio: "Praktiki danışıq və qrammatika mövzularını effektiv şəkildə öyrədən, müasir tədris yanaşmalarına sahib ingilis dili müəllimi.",
+    image: AynurImage,
    
   },
      {
@@ -50,14 +57,7 @@ const teachers = [
     image: YusifImage,
 
   },
-     {
-    id: 6,
-    name: "Novruzova Aynur",
-    profession: "İngilis dili müəllimi",
-    bio: "Praktiki danışıq və qrammatika mövzularını effektiv şəkildə öyrədən, müasir tədris yanaşmalarına sahib ingilis dili müəllimi.",
-    image: AynurImage,
    
-  },
 ];
 
 export default function Teachers() {

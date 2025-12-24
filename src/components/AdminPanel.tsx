@@ -23,7 +23,7 @@ const AdminPanel: React.FC = () => {
 
   const [news, setNews] = useState<News[]>([])
   const [exams, setExams] = useState<Exam[]>([])
-  const [loading, setLoading] = useState(true)
+  const [, setLoading] = useState(true)
   const [error, setError] = useState('')
   const [editingNews, setEditingNews] = useState<News | null>(null)
   const [editingExam, setEditingExam] = useState<Exam | null>(null)

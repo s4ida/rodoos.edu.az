@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { Button } from "./ui/button";
 import { motion, AnimatePresence } from "motion/react";
 import Telimzali from "/src/img/təlim-zalı.jpg";
 import Otaq4 from "/src/img/otaq4.jpg";
