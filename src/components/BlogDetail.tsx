@@ -7,15 +7,19 @@ import Azdiliders1 from "/src/img/Azdiliders1.jpg";
 import Azdiliders2 from "/src/img/Azdiliders2.jpg";
 import riyaziyyatders1 from "/src/img/riyaziyyatders1.jpg";
 import riyaziyyatders2 from "/src/img/riyaziyyatders2.jpg";
+import rusdiliders from "/src/img/rus-dili-ders.jpg";
+import rusdiliders2 from "/src/img/rus-dili-ders-2.jpg";
+import proqramlasdirma1 from "/src/img/proqramlasdirma-ders1.jpeg";
+import proqramlasdirma2 from "/src/img/proqramlasdirma-ders-2.jpeg";
 
 const blogData = [
   {
     id: 1,
     title: "Proqramlaşdırma öyrənməyə necə başlamaq olar?",
     category: "Proqramlaşdırma",
-    images: [
-      "https://images.unsplash.com/photo-1546074176-abecd33d2b53?auto=format&w=1200",
-      "https://images.unsplash.com/photo-1546074176-abecd33d2b53?auto=format&w=1200",
+   images: [
+      proqramlasdirma1,
+    proqramlasdirma2,
     ],
     content: `
 Proqramlaşdırma sadəcə kompüterlə danışmaq deyil, həm də öz oyunlarını, animasiyalarını, mini proqramlarını və hətta veb saytlarını yaratmaq deməkdir. Bu, sanki bir sehrbazlıq kimidir – klaviaturaya bir neçə klik etməklə fikirlərini ekranda canlandırırsan! Uşaqlar üçün proqramlaşdırma həm əyləncəli, həm də yaradıcı bir macəra ola bilər.
@@ -126,9 +130,9 @@ Uğurlarınızı qeyd edin: Hər öyrəndiyiniz 50 yeni söz və ya 5 danışıq
     id: 3,
     title: "Rus dilini sıfırdan necə öyrənmək olar?",
     category: "Rus dili",
-    images: [
-      "https://images.unsplash.com/photo-1546074176-abecd33d2b53?auto=format&w=1200",
-      "https://images.unsplash.com/photo-1546074176-abecd33d2b53?auto=format&w=1200",
+       images: [
+      rusdiliders,
+      rusdiliders2,
     ],
     content: `
 Rus dili, dünya miqyasında geniş yayılmış və həm iş, həm təhsil, həm də səyahət imkanları üçün çox faydalı bir dildir. Lakin sıfırdan öyrənməyə başlayanlar üçün bu proses bəzən çətin və uzun görünə bilər. Doğru metodlar, planlı strategiya və davamlı təcrübə ilə rus dilini öyrənmək sürətli və effektiv ola bilər. Aşağıda sıfırdan rus dilini öyrənməyin yollarını ətraflı şəkildə araşdıracağıq.

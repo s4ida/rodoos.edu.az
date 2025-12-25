@@ -73,23 +73,16 @@ export default function About() {
 
             {/* Haqqımızda Mətni */}
             <div>
-              <h2 className="text-4xl mb-6 text-black-900">Gələcəyin Yolunu Birlikdə Açaq!</h2>
+              <h2 className="text-4xl mb-6 text-black-900 abouth">Gələcəyin Yolunu Birlikdə Açaq!</h2>
               <div className="space-y-4 text-black-700">
                 <p>
-                  Rodoos, Masallıda uşaqların və gənclərin öyrənmək həvəsini artıran, onların fərdi inkişafını ön planda tutan innovativ təhsil mərkəzidir. Burada hər dərs sadəcə bilik ötürmək üçün deyil, eyni zamanda yaradıcı düşüncə, analitik bacarıqlar və özünəinam qazanmaq üçün bir fürsətdir.
-                </p>
+Masallıda fəaliyyət göstərən Rodoos İnnovativ Təhsil Mərkəzi uşaqların və gənclərin öyrənməyə marağını artıran, onların fərdi inkişafını ön planda tutan müasir və innovativ bir məkandır. Burada dərslər yalnız mövzunu öyrətmək üçün deyil, eyni zamanda analitik düşüncə, yaradıcılıq və özünəinam formalaşdırmaq üçün keçirilir.                </p>
                 {expanded && (
                   <>
                     <p>
-                      Bizim kurslarda proqramlaşdırmadan başlayaraq, ofis proqramları, Cambridge ingilis dili, Azərbaycan dili, riyaziyyat, rus dili və məntiq dərslərinə qədər geniş spektr təqdim olunur. Hər bir dərs, şagirdlərin maraq və qabiliyyətlərinə uyğun olaraq hazırlanır ki, öyrənmək həm asan, həm də maraqlı olsun.
-
-Rodoos yalnız akademik inkişafla kifayətlənmir. Uşaqların sosial və fiziki bacarıqlarını da inkişaf etdirmək üçün həftəsonları yarışlar, futbol və müxtəlif əyləncəli tədbirlər təşkil olunur. Bu, onların həm dostluq bağlarını gücləndirir, həm də komandada işləmək bacarıqlarını inkişaf etdirir.
-                    </p>
+Mərkəzdə proqramlaşdırma, ofis proqramları, Cambridge ingilis dili, Azərbaycan dili, riyaziyyat, rus dili və məntiq dərsləri tədris olunur. Tədris prosesi şagirdlərin maraq və qabiliyyətlərinə uyğun qurulur ki, öyrənmək həm asan, həm də maraqlı olsun. Bundan əlavə, həftəsonları keçirilən yarışlar, futbol və əyləncəli tədbirlər uşaqların sosial bacarıqlarını və komanda ruhunu gücləndirir.                    </p>
                     <p>
-                     1-11-ci siniflər üçün blok dərsləri, buraxılış və təkmilləşdirmə imtahanları, həmçinin olimpiadalar təşkil olunur ki, hər şagird öz potensialını sınasın, uğurlarını kəşf etsin və gələcəyə inamla addım atsın.
-
-Rodoos-da hər gün yeni bir kəşfdir, hər dərs yeni bir səyahətdir. Biz inanırıq ki, öyrənmək yalnız bilik qazanmaq deyil, həm də uşaqların özlərinə inanmasını, yaradıcılığını inkişaf etdirməsini və əsl liderlər kimi formalaşmasını təmin edən bir macəradır.
-                    </p>
+1–11-ci siniflər üçün buraxılış və təkmilləşdirmə imtahanları, eləcə də olimpiadalar vasitəsilə şagirdlər öz biliklərini sınayır və gələcəyə daha inamla hazırlaşırlar. Rodoos – uşağınızın həm bilik, həm də şəxsiyyət olaraq inkişaf etdiyi ünvanıdır.                    </p>
                   </>
                 )}
               </div>
