@@ -4,7 +4,7 @@ import SaidaImage from "/src/img/Saida.jpeg";
 import HuseynImage from "/src/img/Hüseynağa.jpeg";
 import AynurImage from "/src/img/Aynur.jpeg";
 import FatimaImage from "/src/img/Fatima.jpeg";
-import YusifImage from "/src/img/Yusif.jpg";
+import YusifImage from "/src/img/Yusif.jpeg";
 import RasimImage from "/src/img/Rasim.jpg";
 
 const teachers = [

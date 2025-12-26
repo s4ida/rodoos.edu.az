@@ -7,11 +7,10 @@ import Azdiliders1 from "/src/img/Azdiliders1.jpg";
 import Azdiliders2 from "/src/img/Azdiliders2.jpg";
 import riyaziyyatders1 from "/src/img/riyaziyyatders1.jpg";
 import riyaziyyatders2 from "/src/img/riyaziyyatders2.jpg";
-import rusdiliders from "/src/img/rus-dili-ders.jpg";
-import rusdiliders2 from "/src/img/rus-dili-ders-2.jpg";
+import rusdiliders from "/src/img/rus-dili-ders.jpeg";
+import rusdiliders2 from "/src/img/rus-dili-ders-2.jpeg";
 import proqramlasdirma1 from "/src/img/proqramlasdirma-ders1.jpeg";
 import proqramlasdirma2 from "/src/img/proqramlasdirma-ders-2.jpeg";
-
 const blogData = [
   {
     id: 1,
