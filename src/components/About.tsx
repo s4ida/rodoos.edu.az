@@ -73,7 +73,7 @@ export default function About() {
 
             {/* Haqqımızda Mətni */}
             <div>
-              <h2 className="text-4xl mb-6 text-black-900 abouth">Gələcəyin Yolunu Birlikdə Açaq!</h2>
+              <h2 className="text-4xl mb-6 text-black-900 abouth">RODOOS-Təhsil yolunuzun dostu!</h2>
               <div className="space-y-4 text-black-700">
                 <p>
 Masallıda fəaliyyət göstərən Rodoos İnnovativ Təhsil Mərkəzi uşaqların və gənclərin öyrənməyə marağını artıran, onların fərdi inkişafını ön planda tutan müasir və innovativ bir məkandır. Burada dərslər yalnız mövzunu öyrətmək üçün deyil, eyni zamanda analitik düşüncə, yaradıcılıq və özünəinam formalaşdırmaq üçün keçirilir.                </p>
