@@ -91,10 +91,12 @@ export default function Footer() {
             <h4 className="text-xl mb-6">Xidmətlər</h4>
             <ul className="space-y-3 text-gray-400">
               <li>Proqramlaşdırma</li>
-              <li>Xarici Dil</li>
+              <li>İngilis dili</li>
+              <li>Məntiq</li>
+              <li>Rus dili</li>
+              <li>Azərbaycan dili</li>
               <li>Riyaziyyat</li>
-              <li>Dizayn</li>
-              <li>İmtahan Hazırlığı</li>
+              <li>İmtahan hazırlığı</li>
             </ul>
           </div>
 

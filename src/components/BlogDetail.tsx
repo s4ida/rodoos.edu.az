@@ -1,27 +1,14 @@
 import { useParams } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
-import IngilisDiliDers1 from "/src/img/IngilisDiliDers1.jpg";
-import IngilisDiliDers2 from "/src/img/IngilisDiliDers2.jpg";
-import Azdiliders1 from "/src/img/Azdiliders1.jpg";
-import Azdiliders2 from "/src/img/Azdiliders2.jpg";
-import riyaziyyatders1 from "/src/img/riyaziyyatders1.jpg";
-import riyaziyyatders2 from "/src/img/riyaziyyatders2.jpg";
-import rusdiliders from "/src/img/rus-dili-ders.jpeg";
-import rusdiliders2 from "/src/img/rus-dili-ders-2.jpeg";
-import proqramlasdirma1 from "/src/img/proqramlasdirma-ders1.jpeg";
-import proqramlasdirma2 from "/src/img/proqramlasdirma-ders-2.jpeg";
+
 const blogData = [
   {
     id: 1,
     title: "Proqramlaşdırma öyrənməyə necə başlamaq olar?",
     category: "Proqramlaşdırma",
-   images: [
-      proqramlasdirma1,
-    proqramlasdirma2,
-    ],
-    content: `
-Proqramlaşdırma sadəcə kompüterlə danışmaq deyil, həm də öz oyunlarını, animasiyalarını, mini proqramlarını və hətta veb saytlarını yaratmaq deməkdir. Bu, sanki bir sehrbazlıq kimidir – klaviaturaya bir neçə klik etməklə fikirlərini ekranda canlandırırsan! Uşaqlar üçün proqramlaşdırma həm əyləncəli, həm də yaradıcı bir macəra ola bilər.
+    images: ["/img/proqramlasdirma-ders1.jpeg", "/img/proqramlasdirma-ders-2.jpeg"],
+    content: `Proqramlaşdırma sadəcə kompüterlə danışmaq deyil, həm də öz oyunlarını, animasiyalarını, mini proqramlarını və hətta veb saytlarını yaratmaq deməkdir. Bu, sanki bir sehrbazlıq kimidir – klaviaturaya bir neçə klik etməklə fikirlərini ekranda canlandırırsan! Uşaqlar üçün proqramlaşdırma həm əyləncəli, həm də yaradıcı bir macəra ola bilər.
 
 1. Niyə öyrənmək istədiyini tap
 Proqramlaşdırmağa başlamaq üçün ilk addım öz məqsədini tapmaqdır. Niyə öyrənmək istəyirsən? Bu, səni motivasiya edəcək:
@@ -81,18 +68,14 @@ Sadə kalkulyator proqramı düzəlt.
 Öz mini veb saytını hazırlayaraq maraqlı məlumatları paylaş.
 Hər gün kiçik bir kod layihəsi ilə yeni şeylər öyrən.
 Beləliklə, proqramlaşdırma yalnız dərs deyil, gündəlik həyatın bir hissəsinə çevrilir.
-    `
+    `,
   },
-   {
+  {
     id: 2,
     title: "İngilis dilini öyrənməyin 5 effektiv yolu",
     category: "İngilis dili",
-    images: [
-      IngilisDiliDers1,
-      IngilisDiliDers2,
-    ],
-    content: `
-İngilis dili, dünyada ən çox danışılan dillərdən biridir və həm təhsil, həm iş, həm də səyahət imkanları üçün çox vacibdir. Lakin bir çox insan ingilis dilini öyrənməkdə çətinlik çəkir və bunu vaxt aparan bir proses kimi görür. Doğru metodlar və effektiv strategiyalar tətbiq etməklə bu proses çox daha sürətli və asan ola bilər. Aşağıda ingilis dilini tez öyrənməyin 5 effektiv yolunu araşdıracağıq.
+    images: ["/img/IngilisDiliDers1.jpg", "/img/IngilisDiliDers2.jpg"],
+    content: `İngilis dili, dünyada ən çox danışılan dillərdən biridir və həm təhsil, həm iş, həm də səyahət imkanları üçün çox vacibdir. Lakin bir çox insan ingilis dilini öyrənməkdə çətinlik çəkir və bunu vaxt aparan bir proses kimi görür. Doğru metodlar və effektiv strategiyalar tətbiq etməklə bu proses çox daha sürətli və asan ola bilər. Aşağıda ingilis dilini tez öyrənməyin 5 effektiv yolunu araşdıracağıq.
 
 1. Hər gün İngilis dilində praktik məşq edin
 Dilin sürətlə öyrənilməsi üçün ən vacib amillərdən biri hər gün praktik məşq etməkdir. Beyin müntəzəm olaraq yeni məlumatları işlədikdə yadda saxlayır və dil bacarıqları inkişaf edir.
@@ -122,19 +105,14 @@ Cümlə qurma təcrübəsi: Hər öyrəndiyiniz sözlə cümlə qurmaq qrammatik
 Hər kəs üçün ingilis dili öyrənmək çətin bir prosesdir. Motivasiya və məqsəd olmadan bu proses çox uzun çəkə bilər.
 Aydın məqsəd qoyun: Məsələn, “6 ayda səviyyəmi A2-dən B1-ə çatdırmaq” kimi konkret məqsəd.
 Kiçik mərhələlər: Böyük hədəfi kiçik addımlara bölmək öyrənməni asanlaşdırır.
-Uğurlarınızı qeyd edin: Hər öyrəndiyiniz 50 yeni söz və ya 5 danışıq məşqi sizi daha da həvəsləndirəcək.
-    `
+Uğurlarınızı qeyd edin: Hər öyrəndiyiniz 50 yeni söz və ya 5 danışıq məşqi sizi daha da həvəsləndirəcək.`,
   },
   {
     id: 3,
     title: "Rus dilini sıfırdan necə öyrənmək olar?",
     category: "Rus dili",
-       images: [
-      rusdiliders,
-      rusdiliders2,
-    ],
-    content: `
-Rus dili, dünya miqyasında geniş yayılmış və həm iş, həm təhsil, həm də səyahət imkanları üçün çox faydalı bir dildir. Lakin sıfırdan öyrənməyə başlayanlar üçün bu proses bəzən çətin və uzun görünə bilər. Doğru metodlar, planlı strategiya və davamlı təcrübə ilə rus dilini öyrənmək sürətli və effektiv ola bilər. Aşağıda sıfırdan rus dilini öyrənməyin yollarını ətraflı şəkildə araşdıracağıq.
+    images: ["/img/rus-dili-ders.jpeg", "/img/rus-dili-ders-2.jpeg"],
+    content: `Rus dili, dünya miqyasında geniş yayılmış və həm iş, həm təhsil, həm də səyahət imkanları üçün çox faydalı bir dildir. Lakin sıfırdan öyrənməyə başlayanlar üçün bu proses bəzən çətin və uzun görünə bilər. Doğru metodlar, planlı strategiya və davamlı təcrübə ilə rus dilini öyrənmək sürətli və effektiv ola bilər. Aşağıda sıfırdan rus dilini öyrənməyin yollarını ətraflı şəkildə araşdıracağıq.
 
 1. Əlifbadan başlamaq və düzgün tələffüz öyrənmək
 Rus dili Kiril əlifbası ilə yazılır, bu səbəbdən əlifba və tələffüzü öyrənmək öyrənmənin ilk və ən vacib addımıdır.
@@ -175,19 +153,14 @@ Səhvlərdən qorxmayın: Danışıq zamanı səhvlər etmək normaldır. Onlard
 Sıfırdan dil öyrənmək səbr və davamlılıq tələb edir. Motivasiya olmadan proses yavaş və çətin görünə bilər.
 Aydın məqsəd qoyun: Məsələn, “3 ayda gündəlik söhbətləri başa düşmək” kimi konkret məqsəd.
 Kiçik mərhələlər: Böyük məqsədləri kiçik addımlara bölmək öyrənməni asanlaşdırır.
-Uğurları qeyd edin: Hər öyrəndiyiniz 10 yeni söz və ya bir danışıq məşqi motivasiyanı artırır.
-    `
+Uğurları qeyd edin: Hər öyrəndiyiniz 10 yeni söz və ya bir danışıq məşqi motivasiyanı artırır.`,
   },
-   {
+  {
     id: 4,
     title: "Azərbaycan dilində bacarıqlı yazı və danışıq necə inkişaf etdirilir?",
     category: "Azərbaycan dili",
-    images: [
-         Azdiliders1,
-      Azdiliders2,
-    ],
-    content: `
-Bacarıqlı yazı və danışıq qabiliyyəti həyatın hər sahəsində uğur qazanmaq üçün vacibdir. Təhsil, iş mühiti, sosial həyat və şəxsi inkişaf üçün düzgün və təsirli ünsiyyət qurmaq lazımdır. Azərbaycan dilində yazı və danışıq bacarıqlarını inkişaf etdirmək üçün müəyyən metodlar və davamlı məşqlər tətbiq edilməlidir. Bu məqalədə sizə bacarıqlı yazı və danışıq üçün praktik və effektiv yolları təqdim edirik.
+    images: ["/img/Azdiliders1.jpg", "/img/Azdiliders2.jpg"],
+    content: `Bacarıqlı yazı və danışıq qabiliyyəti həyatın hər sahəsində uğur qazanmaq üçün vacibdir. Təhsil, iş mühiti, sosial həyat və şəxsi inkişaf üçün düzgün və təsirli ünsiyyət qurmaq lazımdır. Azərbaycan dilində yazı və danışıq bacarıqlarını inkişaf etdirmək üçün müəyyən metodlar və davamlı məşqlər tətbiq edilməlidir. Bu məqalədə sizə bacarıqlı yazı və danışıq üçün praktik və effektiv yolları təqdim edirik.
 
 1. Daha çox oxuyun və müxtəlif mətnlərlə tanış olun
 Oxumaq yazı və danışıq bacarıqlarının təməlini təşkil edir. İnsan nə qədər çox oxuyursa, dil hissi, söz bazası və ifadə tərzi bir o qədər zəngin olur.
@@ -229,19 +202,14 @@ Bacarıqlı yazı və danışıq bir gündə yaranmır. Davamlı məşq, təcrü
 Kiçik və real məqsədlər: Hər gün 5 yeni söz öyrənmək, 1 səhifə yazmaq və ya 10 dəqiqə danışıq məşqi etmək kimi addımlar motivasiyanı artırır.
 Özünü qiymətləndirmək: Yazılarınızı və nitqlərinizi oxuyub səhvləri tapmaq və düzəltmək öyrənməyə kömək edir.
 Uğurları qeyd etmək: Kiçik irəliləyişlər motivasiyanı qoruyur və öyrənməyi əyləncəli edir.
-Təcrübə və təhlil: Yazı və danışıq bacarıqlarınızı müxtəlif kontekstlərdə sınamaq – təqdimat, debat, müsahibə – sizi daha da inkişaf etdirir.
-    `
+Təcrübə və təhlil: Yazı və danışıq bacarıqlarınızı müxtəlif kontekstlərdə sınamaq – təqdimat, debat, müsahibə – sizi daha da inkişaf etdirir.`,
   },
-   {
+  {
     id: 5,
     title: "Riyaziyyatı başa düşmək və həll etmək yolları",
     category: "Riyaziyyat",
-    images: [
-      riyaziyyatders1,
-      riyaziyyatders2,
-    ],
-    content: `
-Riyaziyyat, yalnız məktəblərdə deyil, həyatın hər sahəsində vacib bir fəndir. Lakin bir çox insan üçün riyaziyyat çətin və mürəkkəb görünür. Əslində, doğru yanaşmalar və metodlar tətbiq edilərsə, riyaziyyatı başa düşmək və problemləri həll etmək daha asan olur. Bu məqalədə riyaziyyatı anlamaq və uğurla həll etmək üçün əsas yolları araşdıracağıq.
+    images: ["/img/riyaziyyatders1.jpg", "/img/riyaziyyatders2.jpg"],
+    content: `Riyaziyyat, yalnız məktəblərdə deyil, həyatın hər sahəsində vacib bir fəndir. Lakin bir çox insan üçün riyaziyyat çətin və mürəkkəb görünür. Əslində, doğru yanaşmalar və metodlar tətbiq edilərsə, riyaziyyatı başa düşmək və problemləri həll etmək daha asan olur. Bu məqalədə riyaziyyatı anlamaq və uğurla həll etmək üçün əsas yolları araşdıracağıq.
 
 1. Əsas anlayışları möhkəmləndirin
 Riyaziyyatı başa düşmək üçün ilk addım əsas anlayışları öyrənmək və onları möhkəmləndirməkdir.
@@ -282,9 +250,58 @@ Müxtəlif mənbələrdən faydalanmaq mövzuları daha sürətli başa düşmə
 Riyaziyyatı başa düşmək və həll etmək səbr və davamlılıq tələb edir.
 Kiçik məqsədlər qoyun: Məsələn, gündə 5 məsələ həll etmək və ya yeni mövzunu başa düşmək kimi addımlar motivasiyanı artırır.
 Uğurları qeyd edin: Hər uğurlu həll öyrənməyə həvəsi artırır.
-Pozitiv düşüncə: Riyaziyyatın çətin olduğunu düşünmək əvəzinə, onu öyrənmək üçün fürsət kimi qiymətləndirmək vacibdir.
-    `
+Pozitiv düşüncə: Riyaziyyatın çətin olduğunu düşünmək əvəzinə, onu öyrənmək üçün fürsət kimi qiymətləndirmək vacibdir.`,
   },
+  {
+  id: 6,
+  title: "Məntiqi düşünmə bacarıqlarını inkişaf etdirməyin yolları",
+  category: "Məntiq",
+  images: ["/img/mentiq1.jpg", "/img/mentiq2.jpg"],
+  content: `Məntiq, düzgün düşünmə, analiz etmə və doğru nəticə çıxarma bacarığını formalaşdıran əsas fənlərdən biridir. Xüsusilə məktəb yaşlarında məntiqi düşüncənin inkişafı həm dərslərdə, həm də gündəlik həyatda uğurun əsas açarlarından sayılır. Bu məqalədə məntiqi düşünmə bacarıqlarını inkişaf etdirməyin və məntiq tapşırıqlarını daha asan həll etməyin əsas yollarını araşdıracağıq.
+
+1. Əsas məntiq anlayışlarını mənimsəyin  
+Məntiqi başa düşmək üçün ilk addım əsas anlayışları öyrənməkdir.  
+Əsas anlayışlar: səbəb–nəticə əlaqəsi, müqayisə, qruplaşdırma, ardıcıllıq, oxşarlıq və fərqlər məntiqin əsasını təşkil edir.  
+Vizual düşünmə: Şəkillər, cədvəllər, sxemlər və blok-diaqramlar məntiqi tapşırıqları daha aydın başa düşməyə kömək edir.  
+Sadə nümunələrlə başlamaq: Asan tapşırıqlardan başlayıb tədricən çətin suallara keçmək düşüncə bacarıqlarını möhkəmləndirir.  
+Əsas anlayışlar möhkəm olduqda daha mürəkkəb məntiq tapşırıqları rahatlıqla həll olunur.
+
+2. Tapşırıqları addım-addım analiz edin  
+Məntiq tapşırıqları diqqət və ardıcıllıq tələb edir.  
+Sualı diqqətlə oxuyun: Tapşırığın nə istədiyini tam anlamaq çox vacibdir.  
+Məlumatları ayırın: Verilənləri və tələb olunanı ayrıca müəyyən edin.  
+Addım-addım düşünün: Tələsik cavab vermək əvəzinə hər mərhələni düşünərək irəliləyin.  
+Nəticəni yoxlayın: Tapdığınız cavabın məntiqə uyğun olub-olmadığını analiz edin.
+
+3. Daimi məşq və təkrar  
+Məntiq bacarığı davamlı məşqlərlə inkişaf edir.  
+Gündəlik məntiq tapşırıqları: Hər gün az da olsa məntiq sualları həll etmək düşünmə sürətini artırır.  
+Müxtəlif tip tapşırıqlar: Ardıcıllıq, fiqur tapmacaları, söz məntiqi və cədvəl tapşırıqları bacarıqları genişləndirir.  
+Səhvlərdən nəticə çıxarın: Səhv cavablar öyrənmənin vacib hissəsidir. Səhvin səbəbini anlamaq inkişafı sürətləndirir.  
+Daimi təcrübə məntiqi düşünməni gücləndirir.
+
+4. Məntiqi gündəlik həyatla əlaqələndirin  
+Məntiq yalnız dərs deyil, gündəlik həyatın bir hissəsidir.  
+Gündəlik qərarlar: Seçim etmək, plan qurmaq və nəticələri müqayisə etmək məntiqi düşünmə tələb edir.  
+Məntiq oyunları: Şahmat, dama, sudoku və tapmaca oyunları düşüncə qabiliyyətini inkişaf etdirir.  
+Situasiya analizi: Gündəlik hadisələrdə səbəb–nəticə əlaqələrini tapmaq məntiqi gücləndirir.  
+Həyatla əlaqə məntiq dərsini daha maraqlı və faydalı edir.
+
+5. Dərs və resurslardan düzgün istifadə  
+Məntiqi inkişaf etdirmək üçün doğru mənbələrdən yararlanmaq vacibdir.  
+Müəllim dəstəyi: Anlaşılmayan mövzular üzrə izah almaq düşüncəni aydınlaşdırır.  
+Məntiq kitabları və tapşırıqlar: Nümunələr və izahlarla zəngin materiallar öyrənməni asanlaşdırır.  
+Onlayn resurslar: Video dərslər, interaktiv testlər və məntiq tətbiqləri bacarıqları möhkəmləndirir.  
+Müxtəlif resurslardan istifadə daha yaxşı nəticə verir.
+
+6. Səbr və motivasiya  
+Məntiqi düşünmə bacarığı zamanla formalaşır.  
+Kiçik hədəflər qoyun: Gündə bir neçə tapşırıq həll etmək belə böyük inkişaf yaradır.  
+Uğurları qiymətləndirin: Hər düzgün cavab özünə inamı artırır.  
+Müsbət yanaşma: Məntiq tapşırıqlarına çətinlik kimi deyil, düşüncəni inkişaf etdirən fürsət kimi baxmaq vacibdir.  
+Səbr və davamlılıq uğurun əsas açarıdır.`
+}
+
 ];
 
 export default function BlogDetail() {
@@ -301,128 +318,148 @@ export default function BlogDetail() {
   return (
     <>
       <Header />
-
       <main style={{ maxWidth: "1200px", margin: "0 auto", padding: "40px 20px" }}>
-        {/* Şəkillər */}
         <div className="images-row">
           {blog.images.map((img, index) => (
             <div className="image-wrapper" key={index}>
-              <img
-                src={img}
-                alt={`${blog.title} ${index + 1}`}
-                className="blog-image"
-              />
+              <img src={img} alt={`${blog.title} ${index + 1}`} className="blog-image" />
             </div>
           ))}
         </div>
-
-        {/* Məzmun */}
         <div className="blog-content">
           <span className="category">{blog.category}</span>
-
           <h1 className="title">{blog.title}</h1>
-
-
           <div className="content">{blog.content}</div>
         </div>
       </main>
-
       <Footer />
 
-      {/* CSS */}
-      <style>
-        {`
-          .images-row {
-            display: flex;
-            flex-direction: row;
-            gap: 20px;
-            margin-top: 80px;
-            margin-bottom: 40px;
-            box-sizing: border-box;
-          }
+  <style>
+{`
+  /* Şəkillər */
+  .images-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 60px;
+    margin-bottom: 40px;
+    box-sizing: border-box;
+  }
 
-          .image-wrapper {
-            width: calc(50% - 10px);
-            overflow: hidden; 
-            border-radius: 15px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-          }
+  .image-wrapper {
+    flex: 1 1 calc(50% - 10px);
+    overflow: hidden; 
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f9fafb;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
 
-          .blog-image {
-            width: 100%;
-            height: auto; /* Proportional resizing */
-            max-height: 350px; /* Desktop max height */
-            object-fit: contain; /* Heç bir hissəsi kəsilməsin */
-            transition: transform 0.3s;
-          }
+  .image-wrapper:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+  }
 
-          .blog-image:hover {
-            transform: scale(1.05);
-          }
+  .blog-image {
+    width: 100%;
+    height: auto;
+    max-height: 350px;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: transform 0.3s;
+  }
 
-          .blog-content .category {
-            display: inline-block;
-            background-color: #DBEAFE;
-            color: #1E3A8A;
-            padding: 5px 12px;
-            border-radius: 9999px;
-            font-weight: 600;
-            font-size: 14px;
-          }
+  .blog-image:hover {
+    transform: scale(1.05);
+  }
 
-          .blog-content .title {
-            font-size: 36px;
-            font-weight: 700;
-            color: #111827;
-            margin: 20px 0 10px;
-            line-height: 1.2;
-          }
+  /* Kateqoriya */
+  .blog-content .category {
+    display: inline-block;
+    background-color: #DBEAFE;
+    color: #1E3A8A;
+    padding: 6px 16px;
+    border-radius: 9999px;
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
 
-          .blog-content .date {
-            color: #6B7280;
-            margin-bottom: 30px;
-          }
+  /* Başlıq */
+  .blog-content .title {
+    font-size: 42px;
+    font-weight: 800;
+    color: #111827;
+    margin: 20px 0 25px;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+  }
 
-          .blog-content .content {
-            font-size: 18px;
-            line-height: 1.8;
-            color: #374151;
-            white-space: pre-line;
-          }
+  /* Content mətni */
+  .blog-content .content {
+    font-size: 18px;
+    line-height: 1.7;
+    color: #374151;
+    white-space: pre-line;
+  }
 
-          /* Kiçik tablet və telefon: ≤650px */
-          @media (max-width: 650px) {
-            .images-row {
-              flex-direction: column;
-            }
+  /* Başlıqlar content içində */
+  .blog-content .content h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1E40AF;
+    margin: 30px 0 15px;
+    border-left: 4px solid #2563EB;
+    padding-left: 12px;
+  }
 
-            .image-wrapper {
-              width: 100%;
-            }
+  .blog-content .content h3 {
+    font-size: 22px;
+    font-weight: 600;
+    color: #2563EB;
+    margin: 20px 0 10px;
+  }
 
-            .blog-image {
-              max-height: 450px; /* alt-üst stacked olunca bir az böyük olsun */
-            }
+  /* Listlər */
+  .blog-content .content ul,
+  .blog-content .content ol {
+    margin-left: 25px;
+    margin-bottom: 20px;
+    line-height: 1.6;
+  }
 
-            .blog-content .title {
-              font-size: 28px;
-            }
+  .blog-content .content li {
+    margin-bottom: 10px;
+  }
 
-            .blog-content .content {
-              font-size: 16px;
-            }
-          }
+  /* Responsive */
+  @media (max-width: 1024px) {
+    .image-wrapper { flex: 1 1 48%; }
+    .blog-content .title { font-size: 36px; }
+    .blog-content .content { font-size: 17px; line-height: 1.6; }
+  }
 
-          /* Mobil: ≤420px */
-          @media (max-width: 420px) {
-            .blog-image {
-              max-height: 220px;
-            }
-          }
-        `}
-      </style>
+  @media (max-width: 650px) {
+    .images-row { flex-direction: column; }
+    .image-wrapper { width: 100%; }
+    .blog-image { max-height: 400px; }
+    .blog-content .title { font-size: 30px; }
+    .blog-content .content { font-size: 16px; line-height: 1.55; }
+  }
+
+  @media (max-width: 420px) {
+    .blog-image { max-height: 250px; }
+    .blog-content .title { font-size: 26px; }
+    .blog-content .content { font-size: 15px; line-height: 1.5; }
+  }
+`}
+</style>
+
     </>
   );
 }

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card";
 import { Button } from "./ui/button";
-import { Calendar, Clock, FileText, Loader2, MessageCircle } from "lucide-react";
+import { Calendar, FileText, Loader2, MessageCircle } from "lucide-react";
 import { supabase, type Exam } from '../lib/supabase';
 
 export default function Exams() {
@@ -9,16 +9,15 @@ export default function Exams() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
 
-  // WhatsApp-a yönləndirmə funksiyası
+  // WhatsApp yönləndirməsi
   const handleWhatsAppRedirect = (examTitle: string) => {
-    const phoneNumber = "994774162500"; // +994 77 416 25 00
+    const phoneNumber = "994774162500"; // nömrəni dəyişə bilərsən
     const message = `Salam! "${examTitle}" imtahanı üçün qeydiyyatdan keçmək istəyirəm. Ətraflı məlumat verə bilərsinizmi?`;
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     
     window.open(whatsappUrl, '_blank');
   };
 
-  // Supabase-dən imtahanları yüklə
   const fetchExams = async () => {
     try {
       setLoading(true);
@@ -27,14 +26,11 @@ export default function Exams() {
         .select('*')
         .order('date', { ascending: true });
 
-      if (error) {
-        throw error;
-      }
+      if (error) throw error;
 
       setExams(data || []);
     } catch (err: any) {
       setError('İmtahanlar yüklənərkən xəta: ' + err.message);
-      console.error('Error fetching exams:', err);
     } finally {
       setLoading(false);
     }
@@ -44,25 +40,21 @@ export default function Exams() {
     fetchExams();
   }, []);
 
-  // Tarixi formatla
   const formatDate = (dateString: string) => {
-    return new Date(dateString).toLocaleDateString('az-AZ', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric'
+    const date = new Date(dateString);
+    return date.toLocaleDateString("az-AZ", {
+      day: "2-digit",
+      month: "2-digit",
+      year: "numeric",
     });
   };
 
   if (loading) {
     return (
-      <section id="exams" className="py-20 bg-gradient-to-b from-gray-50 to-white">
-        <div className="container mx-auto px-4 md:px-8">
-          <div className="text-center">
-            <div className="flex items-center justify-center gap-2 text-blue-600">
-              <Loader2 className="w-8 h-8 animate-spin" />
-              <span className="text-xl">İmtahanlar yüklənir...</span>
-            </div>
-          </div>
+      <section id="exams" className="py-20 bg-gray-50">
+        <div className="container mx-auto text-center">
+          <Loader2 className="w-8 h-8 mx-auto animate-spin text-blue-600" />
+          <p className="mt-2 text-blue-600 text-lg">İmtahanlar yüklənir...</p>
         </div>
       </section>
     );
@@ -70,29 +62,26 @@ export default function Exams() {
 
   if (error) {
     return (
-      <section id="exams" className="py-20 bg-gradient-to-b from-gray-50 to-white">
-        <div className="container mx-auto px-4 md:px-8">
-          <div className="text-center">
-            <div className="text-red-600 text-xl">{error}</div>
-            <Button onClick={fetchExams} className="mt-4 bg-blue-600 hover:bg-blue-700">
-              Yenidən cəhd et
-            </Button>
-          </div>
+      <section id="exams" className="py-20 bg-gray-50">
+        <div className="container mx-auto text-center">
+          <p className="text-red-600 text-lg">{error}</p>
+          <Button onClick={fetchExams} className="mt-4 bg-blue-600 hover:bg-blue-700">
+            Yenidən cəhd et
+          </Button>
         </div>
       </section>
     );
   }
 
   return (
-    <section id="exams" className="py-20 bg-gradient-to-b from-gray-50 to-white">
+    <section id="exams" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4 md:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl mb-4 text-blue-900">İmtahanlar</h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-bold text-blue-900 mb-2">İmtahanlar</h2>
+          <p className="text-gray-600 text-lg">
             {exams.length > 0 
               ? `Qarşıdakı ${exams.length} imtahan mövcuddur`
-              : 'Həz hansı imtahan planlaşdırılmayıb'
-            }
+              : 'Hər hansı imtahan planlaşdırılmayıb'}
           </p>
         </div>
 
@@ -103,13 +92,12 @@ export default function Exams() {
             <p className="text-gray-400">İmtahan tarixləri yaxınlarda paylaşılacaq!</p>
           </div>
         ) : (
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {exams.map((exam) => (
               <Card
                 key={exam.id}
-                className="hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-0 shadow-lg relative overflow-hidden"
+                className="border-0 shadow-lg hover:shadow-2xl transition-all duration-300 relative"
               >
-                <div className="absolute top-0 right-0 w-32 h-32 bg-blue-50 rounded-bl-full -mr-16 -mt-16"></div>
                 <CardHeader>
                   <div className="flex items-center gap-2 text-blue-600 text-sm mb-3">
                     <FileText className="w-4 h-4" />
@@ -119,21 +107,16 @@ export default function Exams() {
                   <CardDescription className="text-gray-600 mt-2">
                     {exam.description}
                   </CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <div className="space-y-2">
-                    <div className="flex items-center gap-3 text-gray-600">
-                      <Calendar className="w-5 h-5 text-blue-600" />
-                      <span>{formatDate(exam.date)}</span>
-                    </div>
-                    <div className="flex items-center gap-3 text-gray-600">
-                      <Clock className="w-5 h-5 text-blue-600" />
-                      <span>Müddət: Təyin ediləcək</span>
-                    </div>
+                  <div className="flex items-center gap-2 text-gray-600 mt-2">
+                    <Calendar className="w-5 h-5 text-blue-600" />
+                    <span>{formatDate(exam.date)}</span>
                   </div>
+                </CardHeader>
+
+                <CardContent>
                   <Button 
                     onClick={() => handleWhatsAppRedirect(exam.title)}
-                    className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded-lg transition-all duration-200 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl"
+                    className="w-full mt-4 bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded-lg flex items-center justify-center gap-2 shadow-lg hover:shadow-xl qeydiyyat"
                   >
                     <MessageCircle className="w-4 h-4" />
                     Qeydiyyatdan Keç

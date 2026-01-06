@@ -1,4 +1,4 @@
-import { BookOpen, Code, Languages, Calculator, FileSpreadsheet } from "lucide-react";
+import { BookOpen, Code, Languages, Calculator, FileSpreadsheet, Puzzle } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card";
 
 const services = [
@@ -27,7 +27,7 @@ const services = [
     duration: "6 ay",
   },
    {
-    id: 3,
+    id: 4,
     icon: <Languages className="w-12 h-12 text-black-600" />,
     title: "Rus dili",
     description: "Rus dilində peşəkar danışıq və qrammatika təlim proqramları",
@@ -35,7 +35,7 @@ const services = [
     duration: "6 ay",
   },
   {
-    id: 4,
+    id: 5,
     icon: <Calculator className="w-12 h-12 text-black-600" />,
     title: "Riyaziyyat",
     description: "Abituriyent hazırlığı",
@@ -45,11 +45,19 @@ const services = [
   
  
   {
-    id: 5,
+    id: 6,
     icon: <BookOpen className="w-12 h-12 text-black-600" />,
     title: "Azərbaycan dili",
     description: "Abituriyent hazırlığı",
     price:  "40 AZN/ay",
+    duration: "Müddətsiz",
+  },
+    {
+    id: 7,
+    icon: <Puzzle className="w-12 h-12 text-black-600" />,
+    title: "Məntiq",
+    description: "III-VII sinif şagirdləri üçün",
+    price:  "45 AZN/ay",
     duration: "Müddətsiz",
   },
 ];

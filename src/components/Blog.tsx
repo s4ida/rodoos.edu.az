@@ -1,49 +1,50 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card";
 import { Button } from "./ui/button";
-import { ArrowRight, } from "lucide-react";
-import { ImageWithFallback } from "./figma/ImageWithFallback";
+import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import ProgrammingImage from "/src/img/programming.jpg";
-import EnglishImage from "/src/img/english.jpg";
-import RusImage from "/src/img/rusdili.jpg";
-import AzImage from "/src/img/azdili.jpg";
-import MathImage from "/src/img/math.jpg";
 
 const blogPosts = [
   {
     id: 1,
     title: "Proqramlaşdırma öyrənməyə necə başlamaq olar?",
     excerpt: "Proqramlaşdırmaya başlamaq istəyənlər üçün ətraflı bələdçi və faydalı məsləhətlər.",
-    image: ProgrammingImage,
+    image: "/img/programming.jpg",
     category: "Proqramlaşdırma",
   },
   {
     id: 2,
     title: "İngilis dilini tez öyrənməyin 5 effektiv yolu",
     excerpt: "İngilis dilini səmərəli öyrənmək üçün sübut edilmiş metodlar və praktiki məsləhətlər.",
-    image: EnglishImage,
+    image: "/img/English.jpg",
     category: "İngilis dili",
   },
   {
     id: 3,
     title: "Rus dilini sıfırdan necə öyrənmək olar?",
     excerpt: "Rus dilini səmərəli öyrənmək üçün sübut edilmiş metodlar və praktiki məsləhətlər",
-    image: RusImage,
+    image: "/img/rusdili.jpg",
     category: "Rus dili",
   },
-    {
+  {
     id: 4,
     title: "Azərbaycan dilində bacarıqlı yazı və danışıq necə inkişaf etdirilir?",
     excerpt: "Dil bacarıqlarını gücləndirmək üçün qrammatika, söz ehtiyatı yolları.",
-    image: AzImage,
+    image: "/img/azdili.jpg",
     category: "Azərbaycan dili",
   },
-    {
+  {
     id: 5,
     title: "Riyaziyyatı başa düşmək və həll etmək yolları",
     excerpt: "Riyazi bacarıqlarıbızı inkişaf etdirməyin ideal yolları.",
-    image: MathImage,
+    image: "/img/math.jpg",
     category: "Riyaziyyat",
+  },
+    {
+    id: 6,
+  title: "Məntiqi düşünmə bacarıqlarını inkişaf etdirməyin yolları",
+  excerpt: "Məntiqi düşünmə və problem həll etmə bacarıqları.",
+    image: "/img/mentiq.jpg",
+    category: "Məntiq",
   },
 ];
 
@@ -64,7 +65,7 @@ export default function Blog() {
               className="overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-0 shadow-lg"
             >
               <div className="relative h-56 overflow-hidden">
-                <ImageWithFallback
+                <img
                   src={post.image}
                   alt={post.title}
                   className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
@@ -74,21 +75,16 @@ export default function Blog() {
                 </div>
               </div>
               <CardHeader>
-                <div className="flex items-center gap-2 text-gray-500 text-sm mb-2">
-                </div>
                 <CardTitle className="text-xl text-blue-900 line-clamp-2">{post.title}</CardTitle>
                 <CardDescription className="text-gray-600 line-clamp-3">{post.excerpt}</CardDescription>
               </CardHeader>
               <CardContent>
-               <Link to={`/blog/${post.id}`}>
-<Link to={`/blog/${post.id}`}>
-  <Button variant="ghost" className="text-blue-600 hover:text-blue-700 p-0 h-auto">
-    Davamı
-    <ArrowRight className="w-4 h-4 ml-2" />
-  </Button>
-</Link>
-</Link>
-
+                <Link to={`/blog/${post.id}`}>
+                  <Button variant="ghost" className="text-blue-600 hover:text-blue-700 p-0 h-auto">
+                    Davamı
+                    <ArrowRight className="w-4 h-4 ml-2" />
+                  </Button>
+                </Link>
               </CardContent>
             </Card>
           ))}

@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card";
 import { Button } from "./ui/button";
 import { Badge } from "./ui/badge";
-import { Calendar, User, ArrowRight, Loader2 } from "lucide-react";
+import { User, ArrowRight, Loader2 } from "lucide-react";
 import { supabase, type News } from '../lib/supabase';
 import { Link } from 'react-router-dom';
 
@@ -40,13 +40,7 @@ export default function NewsSection() {
   }, []);
 
   // Tarixi formatla
-  const formatDate = (dateString: string) => {
-    return new Date(dateString).toLocaleDateString('az-AZ', {
-      year: 'numeric',
-      month: 'short',
-      day: 'numeric'
-    });
-  };
+
 
   // Yüklənmə vəziyyəti
   if (loading) {
@@ -152,10 +146,7 @@ export default function NewsSection() {
                 
                 <CardContent className="space-y-4">
                   <div className="flex items-center justify-between text-sm text-gray-500">
-                    <div className="flex items-center gap-2">
-                      <Calendar className="w-4 h-4" />
-                      <span>{formatDate(item.date)}</span>
-                    </div>
+                   
                     <div className="flex items-center gap-2">
                       <User className="w-4 h-4" />
                       <span>{item.author}</span>

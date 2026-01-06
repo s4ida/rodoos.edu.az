@@ -16,12 +16,17 @@ export default function Header() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white shadow-md">
-      <div className="container mx-auto px-4 md:px-8 nav-con">
-        <div className="flex items-center justify-between h-20 nav-div">
+      <div className="container mx-auto px-4 md:px-8 nav-con navcontainer">
+        <div className="flex items-center justify-between h-20 nav-div navbardiv">
           {/* Logo */}
          
-                   <img className="logo" src="/src/img/logo-yatay.png" alt="logo"></img>
+{/* Logo */}
+<img
+  className="logo"
+  src="/img/rodoos-logo1.png"
+  alt="logo"
 
+/>
          
 
           {/* Desktop Navigation */}

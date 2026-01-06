@@ -7,7 +7,7 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './src'),
+      '@': path.resolve(__dirname, './src'), // @ -> src qovluğunu göstərir
     },
   },
   server: {
@@ -15,7 +15,7 @@ export default defineConfig({
     open: true,
   },
   build: {
-    outDir: 'dist',
+    outDir: 'dist', // Build faylları buraya gedəcək
     sourcemap: true,
     rollupOptions: {
       output: {
@@ -34,4 +34,5 @@ export default defineConfig({
       },
     },
   },
+  base: '/', // 👈 Domenin root-u üçün. Subfolder varsa: '/myapp/'
 });

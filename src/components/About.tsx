@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 import { Button } from "./ui/button";
 
-// Şəkillər
+// Şəkillər public/img qovluğundan
 const images = [
-  "/src/img/logo-dikey.jpg",
-  "/src/img/riyaziyyatders1.jpg",
-  "/src/img/riyaziyyatders2.jpg",
-  "/src/img/Azdiliders1.jpg",
-  "/src/img/Azdiliders2.jpg",
+  "/img/logo-dikey.jpg",
+  "/img/riyaziyyatders1.jpg",
+  "/img/riyaziyyatders2.jpg",
+  "/img/Azdiliders1.jpg",
+  "/img/Azdiliders2.jpg",
 ];
 
 export default function About() {
@@ -56,18 +56,18 @@ export default function About() {
                 </div>
 
                 {/* Ön və Arxa düymələr */}
-           <button
-  onClick={prevImage}
-        className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white text-blue-600 rounded-full p-3 shadow-lg transition-all hover:scale-110"
->
-  ‹
-</button>
-<button
-  onClick={nextImage}
-        className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white text-blue-600 rounded-full p-3 shadow-lg transition-all hover:scale-110"
->
-  ›
-</button>
+                <button
+                  onClick={prevImage}
+                  className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white text-blue-600 rounded-full p-3 shadow-lg transition-all hover:scale-110"
+                >
+                  ‹
+                </button>
+                <button
+                  onClick={nextImage}
+                  className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white text-blue-600 rounded-full p-3 shadow-lg transition-all hover:scale-110"
+                >
+                  ›
+                </button>
               </div>
             </div>
 
@@ -76,13 +76,16 @@ export default function About() {
               <h2 className="text-4xl mb-6 text-black-900 abouth">RODOOS-Təhsil yolunuzun dostu!</h2>
               <div className="space-y-4 text-black-700">
                 <p>
-Masallıda fəaliyyət göstərən Rodoos İnnovativ Təhsil Mərkəzi uşaqların və gənclərin öyrənməyə marağını artıran, onların fərdi inkişafını ön planda tutan müasir və innovativ bir məkandır. Burada dərslər yalnız mövzunu öyrətmək üçün deyil, eyni zamanda analitik düşüncə, yaradıcılıq və özünəinam formalaşdırmaq üçün keçirilir.                </p>
+                  Masallıda fəaliyyət göstərən RODOOS İnnovativ Təhsil Mərkəzi uşaqların və gənclərin öyrənməyə marağını artıran, onların fərdi inkişafını ön planda tutan müasir və innovativ bir məkandır. Burada dərslər yalnız mövzunu öyrətmək üçün deyil, eyni zamanda analitik düşüncə, yaradıcılıq və özünəinam formalaşdırmaq üçün keçirilir.
+                </p>
                 {expanded && (
                   <>
                     <p>
-Mərkəzdə proqramlaşdırma, ofis proqramları, Cambridge ingilis dili, Azərbaycan dili, riyaziyyat, rus dili və məntiq dərsləri tədris olunur. Tədris prosesi şagirdlərin maraq və qabiliyyətlərinə uyğun qurulur ki, öyrənmək həm asan, həm də maraqlı olsun. Bundan əlavə, həftəsonları keçirilən yarışlar, futbol və əyləncəli tədbirlər uşaqların sosial bacarıqlarını və komanda ruhunu gücləndirir.                    </p>
+                      Mərkəzdə proqramlaşdırma, ofis proqramları, Cambridge metodlarına əsaslanan ingilis dili, Azərbaycan dili, riyaziyyat, rus dili və məntiq dərsləri tədris olunur. Tədris prosesi şagirdlərin maraq və qabiliyyətlərinə uyğun qurulur ki, öyrənmək həm asan, həm də maraqlı olsun. Bundan əlavə, həftəsonları keçirilən yarışlar, futbol və əyləncəli tədbirlər uşaqların sosial bacarıqlarını və komanda ruhunu gücləndirir.
+                    </p>
                     <p>
-1–11-ci siniflər üçün buraxılış və təkmilləşdirmə imtahanları, eləcə də olimpiadalar vasitəsilə şagirdlər öz biliklərini sınayır və gələcəyə daha inamla hazırlaşırlar. Rodoos – uşağınızın həm bilik, həm də şəxsiyyət olaraq inkişaf etdiyi ünvanıdır.                    </p>
+                      1–11-ci siniflər üçün buraxılış və təkmilləşdirmə imtahanları, eləcə də olimpiadalar vasitəsilə şagirdlər öz biliklərini sınayır və gələcəyə daha inamla hazırlaşırlar. RODOOS – uşağınızın həm bilik, həm də şəxsiyyət olaraq inkişaf etdiyi ünvanıdır.
+                    </p>
                   </>
                 )}
               </div>

@@ -2,33 +2,28 @@ import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 
-import Telimzali from "/src/img/təlim-zalı.jpg";
-import Otaq4 from "/src/img/otaq4.jpg";
-import Otaq2 from "/src/img/otaq2.jpg";
-import Otaq1 from "/src/img/otaq1.jpg";
-
 const heroSlides = [
   {
     id: 1,
-    image: Telimzali,
+    image: "/img/təlim-zalı.jpg",
     title: "Peşəkar Təhsil Mərkəzi",
     subtitle: "Gələcəyinizi bizimlə birlikdə qurun. Keyfiyyətli təhsil və müasir kurslar.",
   },
   {
     id: 2,
-    image: Otaq4,
+    image: "/img/otaq4.jpg",
     title: "Müasir Təhsil Texnologiyaları",
     subtitle: "İnteraktiv dərslər və təcrübəli müəllimlər ilə səmərəli öyrənin.",
   },
   {
     id: 3,
-    image: Otaq2,
+    image: "/img/otaq2.jpg",
     title: "Online və Oflayn Kurslar",
     subtitle: "İstədiyiniz formatda öyrənin, istədiyiniz vaxt irəliləyin.",
   },
   {
     id: 4,
-    image: Otaq1,
+    image: "/img/otaq1.jpg",
     title: "Təcrübəli müəllim kollektivi",
     subtitle: "Öz sahəsində ixtisaslaşmış müəllimlərdən dərs alın.",
   },

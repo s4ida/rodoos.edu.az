@@ -1,63 +1,50 @@
 import { Card, CardContent } from "./ui/card";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
-import SaidaImage from "/src/img/Saida.jpeg";
-import HuseynImage from "/src/img/Hüseynağa.jpeg";
-import AynurImage from "/src/img/Aynur.jpeg";
-import FatimaImage from "/src/img/Fatima.jpeg";
-import YusifImage from "/src/img/Yusif.jpeg";
-import RasimImage from "/src/img/Rasim.jpg";
 
 const teachers = [
   {
     id: 1,
     name: "Şahəliyeva Səidə",
     profession: "Proqramlaşdırma və komputer müəllimi",
-    bio: "Proqramlaşdırma sahəsində real layihələr üzərində təcrübəyə malik,ofis proqramları üzrə 5 illik təcrübəsi olan, tələbələrə praktiki yönümlü dərslər keçirən müəllim.",
-    image: SaidaImage,
-
+    bio: "Proqramlaşdırma sahəsində real layihələr üzərində təcrübəyə malik, ofis proqramları üzrə 5 illik təcrübəsi olan, tələbələrə praktiki yönümlü dərslər keçirən müəllim.",
+    image: "/img/Saida.jpeg",
   },
   {
     id: 2,
     name: "Cəfərov Hüseynağa",
     profession: "İngilis dili müəllimi",
-    bio: "İngilis dili qrammatikasını sadə və anlaşılan formada izah edən,öz sahəsində ixtisaslaşmış, tələbələrin düzgün yazı və danışıq bacarıqlarını möhkəmləndirən müəllim.",
-    image: HuseynImage,
-    
+    bio: "İngilis dili qrammatikasını sadə və anlaşılan formada izah edən, öz sahəsində ixtisaslaşmış, tələbələrin düzgün yazı və danışıq bacarıqlarını möhkəmləndirən müəllim.",
+    image: "/img/Hüseynağa.jpeg",
   },
-{
-    id: 4,
+    {
+    id: 3,
     name: "Ələkbərova Fatimə",
     profession: "Rus dili müəllimi",
     bio: "Rus dili danışıq bacarıqlarını inkişaf etdirməyə fokuslanan, tələbələrin gündəlik və praktiki situasiyalarda sərbəst danışmasına kömək edən müəllim.",
-    image: FatimaImage,
-   
+    image: "/img/Fatima.jpeg",
   },
-
-    {
-    id: 3,
+  {
+    id: 4,
     name: "Qafarov Rasim",
     profession: "Riyaziyyat müəllimi",
     bio: "Riyazi düşünmə və məntiqi analiz bacarıqlarını inkişaf etdirməyə yönəlmiş, tələbələrə hesablamaları daha asan qavramağa kömək edən müəllim.",
-    image: RasimImage,
-   
+    image: "/img/Rasim.jpg",
   },
-      {
-    id: 6,
+  {
+    id: 5,
     name: "Novruzova Aynur",
     profession: "İngilis dili müəllimi",
     bio: "Praktiki danışıq və qrammatika mövzularını effektiv şəkildə öyrədən, müasir tədris yanaşmalarına sahib ingilis dili müəllimi.",
-    image: AynurImage,
-   
+    image: "/img/Aynur.jpeg",
   },
-     {
-    id: 5,
+  {
+    id: 6,
     name: "Zayıdzadə Yusif",
     profession: "Azərbaycan dili müəllimi",
     bio: "Şagirdlərin nitq mədəniyyətini və ünsiyyət bacarıqlarını artıran, qrammatika və danışıq dərsləri ilə seçilən Azərbaycan dili müəllimi.",
-    image: YusifImage,
-
+    image: "/img/Yusif.jpeg",
   },
-   
+
 ];
 
 export default function Teachers() {
@@ -70,6 +57,7 @@ export default function Teachers() {
             Təcrübəli və peşəkar müəllimlər komandası
           </p>
         </div>
+
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {teachers.map((teacher) => (
             <Card
@@ -82,16 +70,14 @@ export default function Teachers() {
                     <ImageWithFallback
                       src={teacher.image}
                       alt={teacher.name}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
                     />
                   </div>
                 </div>
+
                 <h3 className="text-xl mb-2 text-blue-900">{teacher.name}</h3>
                 <p className="text-blue-600 mb-3">{teacher.profession}</p>
                 <p className="text-gray-600 mb-6 px-4">{teacher.bio}</p>
-                <div className="flex justify-center gap-4">
-             
-                </div>
               </CardContent>
             </Card>
           ))}
