@@ -4,6 +4,7 @@ import Hero from "./components/Hero";
 import About from "./components/About";
 import Services from "./components/Services";
 import Teachers from "./components/Teachers";
+import Students from "./components/Students";
 import Blog from "./components/Blog";
 import Exams from "./components/Exams";
 import NewsSection from "./components/News";
@@ -25,6 +26,7 @@ function App() {
             <About />
             <Services />
             <Teachers />
+                        <Students />
             <Blog />
             <Exams />
             <NewsSection />

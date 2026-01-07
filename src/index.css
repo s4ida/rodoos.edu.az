@@ -2273,4 +2273,74 @@ html {
   background-color: 
   #693AC8;
   border-radius: 10px;
+  font-weight: bold;
+}
+
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.marquee {
+  display: flex;
+  animation: marquee 20s linear infinite;
+}
+.studentssec{
+  display: flex;
+  justify-content: center;
+}
+.sagird{
+  border: 3px solid   #693AC8;
+  width: 300px;
+  height: 300px;
+   
+}
+.sagirdimg{
+height: 140px;
+width: 140px;
+border-radius: 50%;
+}
+.studentsdiv{
+  width: 75%;
+}
+.sagirdcard{
+  display: flex;
+  gap: 20px;
+}
+.sagirdh{
+  color: #6D3FC3;
+  font-size: 35px;
+  margin-bottom: 20px;
+}
+.sagirdad{
+  color: #6D3FC3;
+  font-size: 20px;
+}
+.sagirdtext{
+  height: 40%;
+}
+
+ @media (max-width: 460px) {
+  .sagird {
+  width: 200px;
+  height: 250px;
+  img{
+    width: 100px;
+    height: 100px;
+  }
+}}
+
+.movzu{
+   background-color: 
+  #693AC8;
+  border-radius: 10px;
+  color: white;
+  font-size: 16px;
+}
+.examscontainer{
+  width: 90%;
+}
+.examscard{
+  border: 2px solid  #693AC8;
 }

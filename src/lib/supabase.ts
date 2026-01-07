@@ -27,5 +27,6 @@ export interface Exam {
   title: string
   description: string
   date: string
+  pdf_url?: string | null  // <-- PDF link üçün əlavə etdik
   created_at?: string
 }

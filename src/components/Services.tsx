@@ -14,7 +14,7 @@ const services = [
     id: 2,
     icon:<FileSpreadsheet className="w-12 h-12 text-black-600" />,
     title: "Microsoft Office proqramları",
-    description: "Word,Excel,PowerPoint",
+    description: "Word, Excel, PowerPoint",
     price: "40 AZN/ay",
     duration: "3 ay",
   },

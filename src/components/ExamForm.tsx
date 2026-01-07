@@ -1,79 +1,78 @@
-import React, { useEffect, useState } from 'react'
-import { supabase, type Exam } from '../lib/supabase'
-import { Button } from './ui/button'
-import { Input } from './ui/input'
-import { Label } from './ui/label'
-import { Textarea } from './ui/textarea'
-import { Card, CardContent, CardHeader, CardTitle } from './ui/card'
-import { Alert, AlertDescription } from './ui/alert'
+import React, { useEffect, useState } from "react";
+import { supabase, type Exam } from "../lib/supabase";
+import { Button } from "./ui/button";
+import { Input } from "./ui/input";
+import { Label } from "./ui/label";
+import { Textarea } from "./ui/textarea";
+import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
+import { Alert, AlertDescription } from "./ui/alert";
 
 interface ExamFormProps {
-  editingExam?: Exam | null
-  onSuccess?: () => void
+  editingExam?: Exam | null;
+  onSuccess?: () => void;
 }
 
 const emptyForm = {
-  title: '',
-  description: '',
-  date: new Date().toISOString().split('T')[0]
-}
+  title: "",
+  description: "",
+  date: new Date().toISOString().split("T")[0],
+  pdf_url: "", // PDF URL üçün
+};
 
 const ExamForm: React.FC<ExamFormProps> = ({ editingExam, onSuccess }) => {
-  const [formData, setFormData] = useState(emptyForm)
-  const [loading, setLoading] = useState(false)
-  const [error, setError] = useState('')
+  const [formData, setFormData] = useState(emptyForm);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
-  /* ---------------- EDIT MODE ---------------- */
+  /* ---------- EDIT MODE ---------- */
   useEffect(() => {
     if (editingExam) {
       setFormData({
         title: editingExam.title,
         description: editingExam.description,
-        date: editingExam.date
-      })
+        date: editingExam.date,
+        pdf_url: (editingExam as any).pdf_url || "",
+      });
     } else {
-      setFormData(emptyForm)
+      setFormData(emptyForm);
     }
-  }, [editingExam])
+  }, [editingExam]);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
-    const { name, value } = e.target
-    setFormData(p => ({ ...p, [name]: value }))
-  }
+    const { name, value } = e.target;
+    setFormData((p) => ({ ...p, [name]: value }));
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setLoading(true)
-    setError('')
+    e.preventDefault();
+    setLoading(true);
+    setError("");
 
-    const query = editingExam
-      ? supabase
-          .from('exams')
-          .update(formData)
-          .eq('id', editingExam.id)
-      : supabase
-          .from('exams')
-          .insert([formData])
+    try {
+      const query = editingExam
+        ? supabase.from("exams").update(formData).eq("id", editingExam.id)
+        : supabase.from("exams").insert([formData]);
 
-    const { error } = await query
+      const { error } = await query;
 
-    if (error) {
-      setError(error.message)
-    } else {
-      onSuccess?.()
-      setFormData(emptyForm)
+      if (error) throw error;
+
+      onSuccess?.();
+      setFormData(emptyForm);
+    } catch (err: any) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
     }
-
-    setLoading(false)
-  }
+  };
 
   return (
     <Card>
       <CardHeader>
         <CardTitle>
-          {editingExam ? 'İmtahanı redaktə et' : 'Yeni imtahan'}
+          {editingExam ? "İmtahanı redaktə et" : "Yeni imtahan"}
         </CardTitle>
       </CardHeader>
 
@@ -87,30 +86,56 @@ const ExamForm: React.FC<ExamFormProps> = ({ editingExam, onSuccess }) => {
 
           <div>
             <Label>İmtahan adı</Label>
-            <Input name="title" value={formData.title} onChange={handleChange} />
+            <Input
+              name="title"
+              value={formData.title}
+              onChange={handleChange}
+              required
+            />
           </div>
 
           <div>
             <Label>Təsvir</Label>
-            <Textarea name="description" value={formData.description} onChange={handleChange} />
+            <Textarea
+              name="description"
+              value={formData.description}
+              onChange={handleChange}
+            />
           </div>
 
           <div>
             <Label>Tarix</Label>
-            <Input type="date" name="date" value={formData.date} onChange={handleChange} />
+            <Input
+              type="date"
+              name="date"
+              value={formData.date}
+              onChange={handleChange}
+              required
+            />
+          </div>
+
+          <div>
+            <Label>İmtahan mövzuları (PDF URL)</Label>
+            <Input
+              type="url"
+              placeholder="https://link-to-your-pdf.pdf"
+              name="pdf_url"
+              value={(formData as any).pdf_url || ""}
+              onChange={handleChange}
+            />
           </div>
 
           <Button type="submit" disabled={loading} className="w-full">
             {loading
-              ? 'Yüklənir...'
+              ? "Yüklənir..."
               : editingExam
-              ? 'Yadda saxla'
-              : 'Əlavə et'}
+              ? "Yadda saxla"
+              : "Əlavə et"}
           </Button>
         </form>
       </CardContent>
     </Card>
-  )
-}
+  );
+};
 
-export default ExamForm
+export default ExamForm;

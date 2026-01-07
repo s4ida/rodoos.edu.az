@@ -11,13 +11,14 @@ export default function Exams() {
 
   // WhatsApp yönləndirməsi
   const handleWhatsAppRedirect = (examTitle: string) => {
-    const phoneNumber = "994774162500"; // nömrəni dəyişə bilərsən
+    const phoneNumber = "994774162500"; // dəyişə bilərsən
     const message = `Salam! "${examTitle}" imtahanı üçün qeydiyyatdan keçmək istəyirəm. Ətraflı məlumat verə bilərsinizmi?`;
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     
     window.open(whatsappUrl, '_blank');
   };
 
+  // İmtahanları Supabase-dən yükləmə
   const fetchExams = async () => {
     try {
       setLoading(true);
@@ -27,7 +28,6 @@ export default function Exams() {
         .order('date', { ascending: true });
 
       if (error) throw error;
-
       setExams(data || []);
     } catch (err: any) {
       setError('İmtahanlar yüklənərkən xəta: ' + err.message);
@@ -40,6 +40,7 @@ export default function Exams() {
     fetchExams();
   }, []);
 
+  // Tarixi formatlama
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
     return date.toLocaleDateString("az-AZ", {
@@ -75,12 +76,12 @@ export default function Exams() {
 
   return (
     <section id="exams" className="py-20 bg-gray-50">
-      <div className="container mx-auto px-4 md:px-8">
+      <div className="container mx-auto px-4 md:px-8 examscontainer">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-blue-900 mb-2">İmtahanlar</h2>
           <p className="text-gray-600 text-lg">
             {exams.length > 0 
-              ? `Qarşıdakı ${exams.length} imtahan mövcuddur`
+              ? `Qarşıda ${exams.length} imtahan mövcuddur`
               : 'Hər hansı imtahan planlaşdırılmayıb'}
           </p>
         </div>
@@ -96,7 +97,7 @@ export default function Exams() {
             {exams.map((exam) => (
               <Card
                 key={exam.id}
-                className="border-0 shadow-lg hover:shadow-2xl transition-all duration-300 relative"
+                className="border-0 shadow-lg hover:shadow-2xl transition-all duration-300 relative examscard"
               >
                 <CardHeader>
                   <div className="flex items-center gap-2 text-blue-600 text-sm mb-3">
@@ -113,10 +114,24 @@ export default function Exams() {
                   </div>
                 </CardHeader>
 
-                <CardContent>
+                {/* ---------- CardContent: Mövzulara bax + WhatsApp ---------- */}
+                <CardContent className="space-y-2">
+                  {/* PDF varsa Mövzulara bax */}
+                  {exam.pdf_url && (
+                    <Button
+                      variant="outline"
+                      className="w-full flex items-center justify-center gap-2 movzu"
+                      onClick={() => window.open(exam.pdf_url!, "_blank")}
+                    >
+                      <FileText className="w-4 h-4" />
+                      Mövzulara bax
+                    </Button>
+                  )}
+
+                  {/* WhatsApp Qeydiyyat */}
                   <Button 
                     onClick={() => handleWhatsAppRedirect(exam.title)}
-                    className="w-full mt-4 bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded-lg flex items-center justify-center gap-2 shadow-lg hover:shadow-xl qeydiyyat"
+                    className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded-lg flex items-center justify-center gap-2 shadow-lg hover:shadow-xl qeydiyyat"
                   >
                     <MessageCircle className="w-4 h-4" />
                     Qeydiyyatdan Keç
